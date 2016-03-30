@@ -6,6 +6,7 @@
 -->
 <html>
 	<head>
+		<base href="http://static.panalysis.com/analytics-test/" />
 		<title>Panalysis Skills Test - Basic Analytics and tagging</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,8 +20,8 @@
 		<script src="assets/js/main.js"></script>
 		
 		<script type="text/javascript" src="assets/js/jquery.jcarousel.js"></script>
-
         <script type="text/javascript" src="assets/js/jcarousel.basic.js"></script>
+        
 	</head>
 	<body>
 
@@ -29,54 +30,62 @@
 
 				<!-- Header -->
 					<header id="header">
-						<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
-						<h1>This is <strong>Visualize</strong>, a responsive site template designed by <a href="http://templated.co">TEMPLATED</a><br />
-						and released for free under the Creative Commons License.</h1>
+				
+						<h1>This page is provided for you to demonstrate your skills with understanding JavaScript, Google Analytics, JQuery and related technologies.</h1>
+						<h2>1. Add Google Analytics tags</h2>
+						<p>Start by adding in the Google Analytics tracking code for this site which is supplied in the instructions.</p>
+						<h2>2. Add Social Media and Event Tracking</h2>
+						<p>Add in the relevant Google Analytics code to track the following buttons. Social media buttons should be tracked as social media interactions and the other buttons tracked as events.</p>
 						<ul class="icons">
-							<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-							<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+							<li><a href="https://twitter.com/" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://facebook.com/" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="mailto:test@test.com" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+							<li><a href="tel:123456890" class="icon style2 fa-phone"><span class="label">Telephone</span></a></li>
 						</ul>
 					</header>
 
 				<!-- Main -->
 					<section id="main">
+						<!-- Carousel -->
+						<!-- 
+							* Note that the examples use HTML5 data attributes
+						-->
+							
+							<section class="carousel">
+							<h2 style="text-align:center;">3. Tracking User Interactions with Data</h2>
+							<p>Track the clicks on the left and right arrows and record the value in the HTML5 data attribute as the event label.</p>
+								<div class="jcarousel-wrapper">
+									<div class="jcarousel">
+										<ul>
+											<li><img src="images/fulls/slider1.jpg" width="600" height="400" alt="" data-image-id="Portfolio 1"></li>
+											<li><img src="images/fulls/slider2.jpg" width="600" height="400" alt="" data-image-id="Portfolio 2"></li>
+											<li><img src="images/fulls/slider3.jpg" width="600" height="400" alt="" data-image-id="Portfolio 3"></li>
+											<li><img src="images/fulls/slider4.jpg" width="600" height="400" alt="" data-image-id="Portfolio 4"></li>
+											<li><img src="images/fulls/slider5.jpg" width="600" height="400" alt="" data-image-id="Portfolio 5"></li>
+											<li><img src="images/fulls/slider6.jpg" width="600" height="400" alt="" data-image-id="Portfolio 6"></li>
+										</ul>
+									</div>
 
-        <section class="carousel">
-            <h1>Basic carousel</h1>
+									<p class="photo-credits">
+										Photos by <a href="http://www.mw-fotografie.de">Marc Wiegelmann</a>
+									</p>
 
-            <p>This example shows how to setup a basic carousel with prev/next controls and pagination.</p>
-
-            <div class="jcarousel-wrapper">
-                <div class="jcarousel">
-                    <ul>
-                        <li><img src="images/fulls/slider1.jpg" width="600" height="400" alt=""></li>
-                        <li><img src="images/fulls/slider2.jpg" width="600" height="400" alt=""></li>
-                        <li><img src="images/fulls/slider3.jpg" width="600" height="400" alt=""></li>
-                        <li><img src="images/fulls/slider4.jpg" width="600" height="400" alt=""></li>
-                        <li><img src="images/fulls/slider5.jpg" width="600" height="400" alt=""></li>
-                        <li><img src="images/fulls/slider6.jpg" width="600" height="400" alt=""></li>
-                    </ul>
-                </div>
-
-                <p class="photo-credits">
-                    Photos by <a href="http://www.mw-fotografie.de">Marc Wiegelmann</a>
-                </p>
-
-                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-                
-                <p class="jcarousel-pagination">
-                    
-                </p>
-            </div>
-        </section>
+									<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+									<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+				
+									<p class="jcarousel-pagination">
+					
+									</p>
+								</div>
+							</section>
 
 
 						<!-- Thumbnails -->
+						<h2 style="text-align:center;">4. Tracking Other User Interactions with Data</h2>
+								<p>Track the clicks on the images when they display the image as a lightbox and record the value in the HTML5 data attribute as the event label.</p>
 							<section class="thumbnails">
+								
 								<div>
 									<a href="images/fulls/01.jpg">
 										<img src="images/thumbs/01.jpg" alt=""  data-image-id="Number 1" />
@@ -117,6 +126,9 @@
 
 				<!-- Footer -->
 					<footer id="footer">
+					<h2 style="text-align:center;">5. Track clicks on the submit button</h2>
+								<p>Track the clicks on the submit button and record the event label as Success when the two fields have a valid value and Fail when they do not.</p>
+								<p>A valid value for name is 3 characters or more. A valid value for the email address must be a valid email address using a regular expression.</p>
 						<p>Contact Me</p>
 						
 						<form>
