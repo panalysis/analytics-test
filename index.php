@@ -4,7 +4,6 @@ $gtm = filter_var($_GET['gtm'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH |
 ?>
 <html>
 	<head>
-		<base href="http://static.panalysis.com/analytics-test/" />
 		<title>Panalysis Skills Test - Basic Analytics and tagging</title>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
