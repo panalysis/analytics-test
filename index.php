@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="DC.contributor" content="Your favourite cartoon or movie character" />
+		<meta name="DC.contributor" content="Trevor Brown" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/jcarousel.basic.css">
 		
@@ -26,7 +26,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		
 		<script type="text/javascript" src="assets/js/jquery.jcarousel.js"></script>
         <script type="text/javascript" src="assets/js/jcarousel.basic.js"></script>
-        
+	<script>
+		var dataLayer = dataLayer || [];
+		dataLayer.push({'topic':'GTM Skills Test'});
+	</script>
 	</head>
 	<body>
 <!-- Google Tag Manager (noscript) -->
