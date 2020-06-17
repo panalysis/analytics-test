@@ -99,36 +99,36 @@ Your GTM ID: <?php print($gtm); ?>
 								<p>Track the clicks on the images when they display the image as a lightbox and record the value in the HTML5 data attribute as the event label.</p>
 							<section class="thumbnails">
 								
-								<div>
+							<div>
 									<a href="images/fulls/01.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 1">
 										<img src="images/thumbs/01.jpg" alt=""  data-image-id="Number 1" />
 										<h3>Lorem ipsum dolor sit amet</h3>
 									</a>
-									<a href="images/fulls/02.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 1>
+									<a href="images/fulls/02.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 2">
 										<img src="images/thumbs/02.jpg" alt=""  data-image-id="Number 2" />
 										<h3>Lorem ipsum dolor sit amet</h3>
 									</a>
 								</div>
 								<div>
-									<a href="images/fulls/03.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 1>
+									<a href="images/fulls/03.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 3">
 										<img src="images/thumbs/03.jpg" alt=""  data-image-id="Number 3" />
 										<h3>Lorem ipsum dolor sit amet</h3>
 									</a>
-									<a href="images/fulls/04.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 1>
+									<a href="images/fulls/04.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 4">
 										<img src="images/thumbs/04.jpg" alt=""  data-image-id="Number 4" />
 										<h3>Lorem ipsum dolor sit amet</h3>
 									</a>
-									<a href="images/fulls/05.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 1>
+									<a href="images/fulls/05.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 5">
 										<img src="images/thumbs/05.jpg" alt=""  data-image-id="Number 5"  />
 										<h3>Lorem ipsum dolor sit amet</h3>
 									</a>
 								</div>
 								<div>
-									<a href="images/fulls/06.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 1>
+									<a href="images/fulls/06.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 6">
 										<img src="images/thumbs/06.jpg" alt="" data-image-id="Number 6" />
 										<h3>Lorem ipsum dolor sit amet</h3>
 									</a>
-									<a href="images/fulls/07.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 1>
+									<a href="images/fulls/07.jpg" data-track="lightbox" data-track-lightbox-name="Lightbox 7">
 										<img src="images/thumbs/07.jpg" alt=""  data-image-id="Number 7" />
 										<h3>Lorem ipsum dolor sit amet</h3>
 									</a>
