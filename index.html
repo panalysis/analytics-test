@@ -143,16 +143,16 @@ Your GTM ID: <?php print($gtm); ?>
 								<p>Track the clicks on the submit button and record the event label as Success when the two fields have a valid value and Fail when they do not.</p>
 								<p>A valid value for name is 3 characters or more. A valid value for the email address must be a valid email address using a regular expression.</p>
 						<p>Contact Me</p>
-
+						
 						<?php 
 						if (isset($_POST['name'])) { 
-							echo "Thank you for your submission"; 
-							echo "<script>dataLayer.push({'event':'formSubmit', formName:'Contact Form'});</script>"
+							print("Thank you for your submission"); 
+							print("<script>dataLayer.push({'event':'formSubmit', formName:'Contact Form'});</script>");
 						} 
 						?> 
 
 						
-						<form action="<?php echo($_SERVER['REQUEST_URI']) />" method="POST">
+						<form action="<?php echo($_SERVER['REQUEST_URI']) ?>" method="POST">
 							Your Name: <input type="text" name="name"/>
 							Your Email: <input type="text" name="email"/>
 							<input type="submit" name="go"/>

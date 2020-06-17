@@ -152,7 +152,7 @@ Your GTM ID: <?php print($gtm); ?>
 						?> 
 
 						
-						<form action="<?php echo($_SERVER['REQUEST_URI']) />" method="POST">
+						<form action="<?php echo($_SERVER['REQUEST_URI']) ?>" method="POST">
 							Your Name: <input type="text" name="name"/>
 							Your Email: <input type="text" name="email"/>
 							<input type="submit" name="go"/>
