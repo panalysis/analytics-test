@@ -139,15 +139,18 @@ Your GTM ID: <?php print($gtm); ?>
 
 				<!-- Footer -->
 					<footer id="footer">
-					<h2 style="text-align:center;">5. Track clicks on the submit button</h2>
-								<p>Track the clicks on the submit button and record the event label as Success when the two fields have a valid value and Fail when they do not.</p>
-								<p>A valid value for name is 3 characters or more. A valid value for the email address must be a valid email address using a regular expression.</p>
+					<h2 style="text-align:center;">5. Track Form Submits</h2>
+								<p>Track form submissions and record the event label as Success when the two fields have a valid value and Fail when they do not.</p>
+								<p>When the form is submitted a dataLayer.push event is triggered to send data to Google Tag Manager</p>
 						<p>Contact Me</p>
 
 						<?php 
-						if (isset($_POST['name'])) { 
+						if (isset($_POST['name']) && isset($_POST['email'])) { 
 							print("Thank you for your submission"); 
-							print("<script>dataLayer.push({'event':'formSubmit', formName:'Contact Form'});</script>");
+							print("<script>dataLayer.push({'event':'formSubmit', 'formStatus':'Success', 'formName':'Contact Form'});</script>");
+						}
+						else {
+							print("<script>dataLayer.push({'event':'formSubmit', 'formStatus':'Fail', 'formName':'Contact Form'});</script>");
 						} 
 						?> 
 
