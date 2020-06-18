@@ -145,12 +145,13 @@ Your GTM ID: <?php print($gtm); ?>
 						<p>Contact Me</p>
 
 						<?php 
-						if (isset($_POST['name']) && isset($_POST['email'])) { 
+						if (isset($_POST['name']) && strlen($_POST['name'])>3 && isset($_POST['email']) && strlen($_POST['email'])>3) { 
 							print("Thank you for your submission"); 
 							print("<script>dataLayer.push({'event':'formSubmit', 'formStatus':'Success', 'formName':'Contact Form'});</script>");
 						}
 						else {
 							print("<script>dataLayer.push({'event':'formSubmit', 'formStatus':'Fail', 'formName':'Contact Form'});</script>");
+							print("Sorry that form was incomplete");
 						} 
 						?> 
 
