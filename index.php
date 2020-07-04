@@ -149,9 +149,9 @@ Your GTM ID: <?php print($gtm); ?>
 							print("Thank you for your submission"); 
 							print("<script>dataLayer.push({'event':'formSubmit', 'formStatus':'Success', 'formName':'Contact Form'});</script>");
 						}
-						else {
+						elseif (isset($_POST['name']) || isset($_POST['email'])) {
 							print("<script>dataLayer.push({'event':'formSubmit', 'formStatus':'Fail', 'formName':'Contact Form'});</script>");
-							print("Sorry that form was incomplete");
+							print("Sorry that form was incomplete.");
 						} 
 						?> 
 
