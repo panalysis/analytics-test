@@ -218,6 +218,12 @@ class GoogleAnalytics extends AbstractAnalytics {
 }
 
 $gtm = filter_var($_GET['gtm'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_LOW);
+$testType = "tagging";
+
+if($_GET['testermode']==1){
+  $testType = "testing";
+}
+
 
 ?>
 
@@ -259,24 +265,43 @@ $gtm = filter_var($_GET['gtm'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH |
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 Your GTM ID: <?php print($gtm); ?>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
 					<header id="header">
-				
-						<h1>This page is provided for you to demonstrate your skills with understanding JavaScript, Google Analytics, JQuery and related technologies.</h1>
-						<h2>1. Add Google Analytics tags</h2>
-						<p>Start by adding in the Google Analytics tracking code for this site which is supplied in the instructions.</p>
-						<h2>2. Add Social Media and Event Tracking</h2>
-						<p>Add in the relevant Google Analytics code to track the following buttons. Social media buttons should be tracked as social media interactions and the other buttons tracked as events.</p>
-						<ul class="icons">
-							<li><a href="https://twitter.com/" class="icon style2 fa-twitter" id="twitter" data-track="social-media" data-track-social-media-name="Twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://facebook.com/" class="icon style2 fa-facebook" id="facebook" data-track="social-media" data-track-social-media-name="Facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="https://www.instagram.com/" class="icon style2 fa-instagram" id="instagram" data-track="social-media" data-track-social-media-name="Instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="mailto:test@test.com" class="icon style2 fa-envelope-o" id="email" data-track="email"  data-track-email-name="Main Contact Email"><span class="label">Email</span></a></li>
-							<li><a href="tel:123456890" class="icon style2 fa-phone" id="telephone" data-track="telephone" data-track-telephone-name="Main Contact Number"><span class="label">Telephone</span></a></li>
-						</ul>
+
+            <?php if($testType=="testing"): ?>
+                <h1>Testing Skills Test</h1>
+                <p>The purpose of this test is to determine how you approach testing in an analytics context.</p>
+                <p>There are a number of test cases to perform based on the requirements below.</p>
+                <p>To complete this you should understand the Google Analytics measurement protocol relating to <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#page">Page Tracking</a> and <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event">Event Tracking</a>
+                <p>There are two separate Google Tag Manager container IDs. One which is working correctly and the other which is not.</p>
+                <P>Working: <a href="?gtm=GTM-TXB77QN&testermode=1">GTM-TXB77QN</a>
+
+
+                
+                <h2>1. Check Google Analytics page view tags are sending data</h2>
+                <p>When this page is loaded a Google Analytics request should be sent to the Google Analytics property with the ID: UA-171427676-1</p>
+            <?php else: ?>
+              <h1>This page is provided for you to demonstrate your skills with understanding JavaScript, Google Analytics, JQuery and related technologies.</h1>
+              
+              <h2>1. Add Google Analytics tags</h2>
+              <p>Start by adding in the Google Analytics tracking code for this site which is supplied in the instructions.</p>
+
+            <?php endif; ?>
+
+              <h2>2. Add Social Media and Event Tracking</h2>
+              <p>Add in the relevant Google Analytics code to track the following buttons. Social media buttons should be tracked as social media interactions and the other buttons tracked as events.</p>
+              <ul class="icons">
+                <li><a href="https://twitter.com/" class="icon style2 fa-twitter" id="twitter" data-track="social-media" data-track-social-media-name="Twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="https://facebook.com/" class="icon style2 fa-facebook" id="facebook" data-track="social-media" data-track-social-media-name="Facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/" class="icon style2 fa-instagram" id="instagram" data-track="social-media" data-track-social-media-name="Instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="mailto:test@test.com" class="icon style2 fa-envelope-o" id="email" data-track="email"  data-track-email-name="Main Contact Email"><span class="label">Email</span></a></li>
+                <li><a href="tel:123456890" class="icon style2 fa-phone" id="telephone" data-track="telephone" data-track-telephone-name="Main Contact Number"><span class="label">Telephone</span></a></li>
+              </ul>
+            
 					</header>
 
 				<!-- Main -->
@@ -288,7 +313,12 @@ Your GTM ID: <?php print($gtm); ?>
 							
 							<section class="carousel">
 							<h2 style="text-align:center;">3. Tracking User Interactions with Data</h2>
+              <?php if($testType=="testing"): ?>
+                Test Case 1: When a user clicks on the right hand arrow data should be sent to Google Analytics.
+              <?php else: ?>
 							<p>Track the clicks on the left and right arrows and record the value in the HTML5 data attribute as the event label.</p>
+
+              <?php endif; ?>
 								<div class="jcarousel-wrapper">
 									<div class="jcarousel" data-track="carousel">
 										<ul>
