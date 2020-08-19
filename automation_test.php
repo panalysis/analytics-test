@@ -426,6 +426,7 @@ $page_url_parts = explode( '?', $pageURL );
             <h2>4. Form Submits</h2>
             <h3>Requirement</h3>
             <p>Case: When a user has entered their name and a valid email address the submit button is set to become active and the form can be submitted.</p>
+            <p>Case: A random user ID is created for each form request. When the form is submitted the value of the random user ID is displayed in the confirmation message. The resulting user ID must match the original value in the form prior to the form submission.</p>
             <p>Case: When the form is submitted by the user an event is sent to Google Analytics with the following parameters.</p>
             <ul>
                 <li>t=event,</li>
@@ -444,7 +445,8 @@ $page_url_parts = explode( '?', $pageURL );
         <div class="row justify-content-md-center">
         <?php 
 						if (isset($_POST['name']) && strlen($_POST['name'])>3 && isset($_POST['email']) && strlen($_POST['email'])>3) { 
-							print('<div class="alert alert-primary" role="alert">Thank you for your submission</div>'); 
+                            $userid = filter_var($_POST['userid'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_LOW);
+							print('<div class="alert alert-primary" role="alert">Thank you for your submission. Your ID is ' . $userid .'</div>'); 
 							print("<script>dataLayer.push({'event':'formSubmit', 'formStatus':'Success', 'formName':'Contact Form'});</script>");
 						}
 						elseif (isset($_POST['name']) || isset($_POST['email'])) {
@@ -457,6 +459,9 @@ $page_url_parts = explode( '?', $pageURL );
             <form action="<?php echo($_SERVER['REQUEST_URI']) ?>" method="POST">
                 Your Name: <input type="text" name="name"/>
                 Your Email: <input type="text" name="email"/>
+                Your ID: <input type="text" name="userid" value='<?php 
+                $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                echo(substr(str_shuffle($permitted_chars), 0, 8));?>'/>
                 <input type="submit" name="go"/>
             </form>
         </div>
