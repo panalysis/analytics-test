@@ -281,15 +281,24 @@ $page_url_parts = explode( '?', $pageURL );
         </div>
         <div class="row">
 
-                <p>The purpose of this test is to determine how you approach testing in an analytics context.</p>
-                <p>There are a number of test cases to perform based on the requirements below.</p>
+                <p>The purpose of this test is to determine how you approach testing in an analytics context and to provide an example of an automated test script using browser automation with tools such as Jest/Puppeteer (https://jestjs.io/docs/en/puppeteer), NightWatchJS (https://nightwatchjs.org/) or similar.</p>
+                <p>Your response should address the test cases based on the requirements below.</p>
                 <p>To complete this you should understand the Google Analytics measurement protocol relating to <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#page">Page Tracking</a> and <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event">Event Tracking</a>
+                <p>Your test scripts need to intercept the network request sending the data to Google Analytics and to check that the data passed in the parameters matches the requirements.</p>
                 <p>There are two separate Google Tag Manager container IDs. One which is working correctly and the other which is not.</p>
                 <ul>
                     <li>Working Correctly:<a href="?testtype=pass"><?php echo($page_url_parts[0]."?testtype=pass"); ?></a></li>
                     <li>Not Working Correctly: <a href="?testtype=fail"><?php echo($page_url_parts[0]."?testtype=fail"); ?></a></li>
         </ul>
+        </div>
 
+        <div class="row">
+        <h2>What You Need to Provide</h2>
+        <ul>
+            <li>A document containing your test cases</li>
+            <li>Examples test automation scripts using a headless browser to intercept the network requests and test their contents.</li>
+            <li>An example of a report demonstrating how you would present the test results</li>
+        </ul>
         </div>
     
 
@@ -410,9 +419,48 @@ $page_url_parts = explode( '?', $pageURL );
                 </p>
             </div>
 						
-
-    </div>
         </div>
+
+        <div class="row">
+            <div>
+            <h2>4. Form Submits</h2>
+            <h3>Requirement</h3>
+            <p>Case: When a user has entered their name and a valid email address the submit button is set to become active and the form can be submitted.</p>
+            <p>Case: When the form is submitted by the user an event is sent to Google Analytics with the following parameters.</p>
+            <ul>
+                <li>t=event,</li>
+                <li>ec=Forms,</li>
+                <li>ec=Submit Form,</li>
+                <li>ec=Success</li>
+            </ul>
+
+            <pre><code>https://www.google-analytics.com/collect?...
+                t=event&...
+                &ec=Forms&
+                ea=Submit%20Form&
+                el=Success&...</code></pre>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+        <?php 
+						if (isset($_POST['name']) && strlen($_POST['name'])>3 && isset($_POST['email']) && strlen($_POST['email'])>3) { 
+							print('<div class="alert alert-primary" role="alert">Thank you for your submission</div>'); 
+							print("<script>dataLayer.push({'event':'formSubmit', 'formStatus':'Success', 'formName':'Contact Form'});</script>");
+						}
+						elseif (isset($_POST['name']) || isset($_POST['email'])) {
+							print("<script>dataLayer.push({'event':'formSubmit', 'formStatus':'Fail', 'formName':'Contact Form'});</script>");
+							print('<div class="alert alert-danger" role="alert">Sorry that form was not complete</div>');
+						} 
+						?> 
+        </div>
+        <div class="row justify-content-md-center">
+            <form action="<?php echo($_SERVER['REQUEST_URI']) ?>" method="POST">
+                Your Name: <input type="text" name="name"/>
+                Your Email: <input type="text" name="email"/>
+                <input type="submit" name="go"/>
+            </form>
+        </div>
+    </div>
 
 
     <!-- Optional JavaScript -->
