@@ -292,8 +292,8 @@ $page_url_parts = explode( '?', $pageURL );
         </ul>
         </div>
 
+        <div class="row"><h2>What You Need to Provide</h2></div>
         <div class="row">
-        <h2>What You Need to Provide</h2>
         <ul>
             <li>A document containing your test cases</li>
             <li>Examples test automation scripts using a headless browser to intercept the network requests and test their contents.</li>
